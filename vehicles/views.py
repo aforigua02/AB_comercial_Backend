@@ -12,7 +12,7 @@ class VehicleViewSet(viewsets.ModelViewSet):
 
     def get_queryset(self):
         queryset = Vehicle.objects.all().order_by('-created_at')
-        search = self.request.query_params.get('search')
+        search = self.request.query_params.get('q')
         if search:
             queryset = queryset.filter(
                 Q(brand__icontains=search) | Q(arrival_location__incontains=search)

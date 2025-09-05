@@ -1,11 +1,11 @@
-afrom rest_framework import serializers
+from rest_framework import serializers
 from .models import Vehicle
 
 class VehicleSerializer(serializers.ModelSerializer):
     class Meta:
         model = Vehicle
-        fields = ['id', 'brand', 'arrival_location', 'applicant', 'created_at', 'updated_at']
-        read_only_fields = ('id', 'created_at', 'updated_at')  # ← el cliente no los envía
+        fields = ['id', 'brand', 'arrival_location', 'applicant', 'created_at', 'update_at']
+        read_only_fields = ('id', 'created_at', 'update_at') 
 
     # ---- Validaciones a nivel de campo (field-level) ----
     def validate_brand(self, value):

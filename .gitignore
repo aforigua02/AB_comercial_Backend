@@ -1,0 +1,31 @@
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+*.egg-info/
+.eggs/
+*.egg
+pip-wheel-metadata/
+
+# Entornos
+.venv/
+venv/
+ENV/
+env/
+.venv*/
+.env
+.env.*
+
+# Django
+db.sqlite3
+media/
+static/
+staticfiles/
+*.log
+
+# Sistemas / IDE
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

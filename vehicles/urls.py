@@ -6,6 +6,6 @@ router = DefaultRouter()
 router.register(r'vehicles',VehicleViewSet,basename='vehicle')
 
 urlpatterns = [
-path('health/',health)
+    path('health/',health),
     path('',include(router.urls)),
 ]
