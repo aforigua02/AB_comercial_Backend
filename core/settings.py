@@ -11,9 +11,20 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 """
 
 from pathlib import Path
+import os
+import dj_database_url
+
+
+
+
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+
+STATIC_URL = "/static/"
+STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles") 
+
 
 
 # Quick-start development settings - unsuitable for production
@@ -25,7 +36,7 @@ SECRET_KEY = 'django-insecure-_kg)pbm8f6zw8(h&j69sd=(v-ctkvakb0zfs2zs5_2^lwpy!-3
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS", ".onrender.com,localhost,127.0.0.1").split(",")
 
 
 # Application definition
@@ -62,6 +73,9 @@ MIDDLEWARE = [
 
 CORS_ALLOW_ALL_ORIGINS = True
 ROOT_URLCONF = 'core.urls'
+
+CSRF_TRUSTED_ORIGINS = ["https://*.onrender.com", "http://127.0.0.1", "http://localhost"]
+
 
 TEMPLATES = [
     {
