@@ -15,7 +15,9 @@ class VehicleViewSet(viewsets.ModelViewSet):
         search = self.request.query_params.get('q')
         if search:
             queryset = queryset.filter(
-                Q(brand__icontains=search) | Q(arrival_location__incontains=search)
+                Q(brand__icontains=search) |
+                Q(arrival_location__icontains=search) |
+                Q(applicant__icontains=search)
             )
         return queryset
 
