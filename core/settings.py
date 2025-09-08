@@ -55,7 +55,7 @@ INSTALLED_APPS = [
 REST_FRAMEWORK = {
     "DEFAULT_PAGINATION_CLASS": "rest_framework.pagination.LimitOffsetPagination",
     "PAGE_SIZE": 10, 
-    "EXCEPTION_HANDLER": "core.exceptions.custom_exception_handler"
+    #"EXCEPTION_HANDLER": "core.exceptions.custom_exception_handler"
 }
 
 
