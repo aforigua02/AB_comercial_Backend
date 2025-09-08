@@ -12,6 +12,7 @@ class VehicleSerializer(serializers.ModelSerializer):
         value = value.strip()
         if not value:
             raise serializers.ValidationError("Marca is required.")
+        return value
 
     def validate_arrival_location(self, value):
         value = value.strip()
